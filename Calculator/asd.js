@@ -18,3 +18,43 @@ var romanToInt = function (s) {
 };
 
 console.log(romanToInt("MCMXCIV"));
+
+var intToRoman = function (num) {
+  const romanNumerals = [
+    { value: 1000, numeral: "M" },
+    { value: 900, numeral: "CM" },
+    { value: 500, numeral: "D" },
+    { value: 400, numeral: "CD" },
+    { value: 100, numeral: "C" },
+    { value: 90, numeral: "XC" },
+    { value: 50, numeral: "L" },
+    { value: 40, numeral: "XL" },
+    { value: 10, numeral: "X" },
+    { value: 9, numeral: "IX" },
+    { value: 5, numeral: "V" },
+    { value: 4, numeral: "IV" },
+    { value: 1, numeral: "I" },
+  ];
+
+  let result = "";
+
+  for (let i = 0; i < romanNumerals.length; i++) {
+    while (num >= romanNumerals[i].value) {
+      result += romanNumerals[i].numeral;
+      num -= romanNumerals[i].value;
+    }
+  }
+
+  return result;
+};
+
+// Example usage
+console.log(intToRoman(3)); // Output: 'III'
+console.log(intToRoman(4)); // Output: 'IV'
+console.log(intToRoman(9)); // Output: 'IX'
+console.log(intToRoman(58)); // Output: 'LVIII'
+console.log(intToRoman(1994)); // Output: 'MCMXCIV'
+
+let cand = [1, 2, 3, 5];
+
+console.log(Math.max(...cand));
