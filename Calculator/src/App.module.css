@@ -1,7 +1,8 @@
 .calculator {
   border: 1px solid black;
   border-radius: 5px;
-  width: 204px;
+  width: 202px;
+  background-color: gray;
   /* height: auto; */
   /* width: fit-content; */
 }
